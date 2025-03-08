@@ -13,7 +13,7 @@
 
 <br>
 
-## 👩‍🏫 Professor:
+## 👩‍🏫 Professor Orientador:
 - <a href="https://www.linkedin.com/in/cristiano-benites-ph-d-687647a8/">Cristiano Benites</a>
 
 ## 📜 Descrição
