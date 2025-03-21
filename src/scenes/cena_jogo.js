@@ -10,7 +10,7 @@ class CenaJogo extends Phaser.Scene {
         this.load.image('cloud', 'assets/cloud.png');
         this.load.spritesheet('coin', 'assets/coin.png', { frameWidth: 16, frameHeight: 16 }); 
         this.load.spritesheet('emerald', 'assets/emerald.png', { frameWidth: 16, frameHeight: 16 }); 
-
+        this.load.image('puffle2', 'assets/puffle2.png')
     }
 
     create() {
@@ -36,8 +36,12 @@ class CenaJogo extends Phaser.Scene {
         // Definindo os limites do mundo
         this.physics.world.setBounds(0, 0, this.mapImg.width * this.mapImg.scaleX, this.mapImg.height * this.mapImg.scaleY);
         
-        // Adicionando o player
-        this.player = this.physics.add.sprite(180, 50, 'puffle').setScale(0.2);
+        // Verificando orientação da tela e mudando o puffle de acordo
+        if(game.scale.orientation === Phaser.Scale.LANDSCAPE){
+            this.player = this.physics.add.sprite(180, 50, 'puffle').setScale(0.2);        
+        } else if(game.scale.orientation === Phaser.Scale.PORTRAIT){
+            this.player = this.physics.add.sprite(180, 50, 'puffle2').setScale(0.2);
+        };
 
         // Criando a animação da esmeralda, adicionando-a e reproduzindo a animação
         this.anims.create({
